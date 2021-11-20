@@ -58,8 +58,7 @@ function App() {
                         </div>
                     </div>
                 </div>
-                <div
-                    className={"bg-gray-500 rounded-xl flex justify-center items-center h-36 w-36 mx-auto duration-500 "
+                <div className={"bg-gray-500 rounded-xl flex justify-center items-center h-36 w-36 mx-auto duration-500 "
                     + (bool ? 'transform scale-100' : 'transform scale-50')}>
                     <span className="font-extrabold text-5xl font-sans">{count}</span>
                 </div>
