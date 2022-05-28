@@ -3,6 +3,12 @@ import './App.css';
 import TopBar from './components/TopBar';
 import {FaBeer} from 'react-icons/fa';
 import {FaCheck, FaTimes} from 'react-icons/fa';
+import * as helper from './helper/externalHelper';
+import texts from './nls/texts.json';
+
+const getText = function (key) {
+    return helper.getText(texts, key);
+}
 
 function Button(props) {
     return (
@@ -20,15 +26,15 @@ function App() {
     const [count, setCount] = useState(0);
 
     const children = [
-        <a href="#" className="link-gray">About</a>,
-        <a href="#" className="link-gray">Contact</a>,
-        <a href="#" className="link-gray">Projects</a>
+        <a href="/files" className="link-gray">{getText('topbar.files')}</a>,
+        <a href="/contact" className="link-gray">{getText('topbar.contact')}</a>,
+        // <a href="/contact" className="link-gray">{getText('topbar.contact')}</a>
     ]
 
     return (
         <div>
             <TopBar logo={<FaBeer size="28" color="white"/>}
-                    heading={'Ivar Lund'} titleOnClick={'#'} children={children}/>
+                    heading={getText('topbar.heading')} titleOnClick={'#'} children={children}/>
             <div className="w-100 h-screen p-2 mx-auto bg-gray-200 relative">
                 <div className="flex justify-center items-center py-2">
                     <div className="flex flex-col">
